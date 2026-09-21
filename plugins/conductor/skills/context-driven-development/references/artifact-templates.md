@@ -2,7 +2,7 @@
 
 Starter templates for each Conductor context artifact. Copy and fill in for new projects.
 
-> Contributed by [@fernandezbaptiste](https://github.com/fernandezbaptiste) ([#437](https://github.com/wshobson/agents/pull/437))
+> Contributed by [@fernandezbaptiste](https://github.com/fernandezbaptiste) ([#437](https://github.com/liangquanli930/agents/pull/437))
 
 ## product.md
 

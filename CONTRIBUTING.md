@@ -134,4 +134,4 @@ read [`docs/authoring.md`](docs/authoring.md) for the full guide.
 
 - **Bugs / features / new components**: use the GitHub issue templates.
 - **Code of Conduct violations**: see [`.github/CODE_OF_CONDUCT.md`](.github/CODE_OF_CONDUCT.md).
-- **Discussions**: <https://github.com/wshobson/agents/discussions>.
+- **Discussions**: <https://github.com/liangquanli930/agents/discussions>.

@@ -118,7 +118,7 @@ Manage track lifecycle:
 
 This plugin is based on [Conductor](https://github.com/gemini-cli-extensions/conductor) by Google, originally developed for Gemini CLI.
 
-Adapted for Claude Code by [@wshobson](https://github.com/wshobson).
+Adapted for Claude Code by [@liangquanli930](https://github.com/liangquanli930).
 
 ## License
 

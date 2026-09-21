@@ -41,7 +41,7 @@ Add `protect-mcp` to your Claude Code project:
 
 ```bash
 # 1. Install the plugin (adds hooks + skill to your project)
-claude plugin install wshobson/agents/protect-mcp
+claude plugin install liangquanli930/agents/protect-mcp
 
 # 2. Create ./protect.cedar (see below). The plugin installs the hooks.
 

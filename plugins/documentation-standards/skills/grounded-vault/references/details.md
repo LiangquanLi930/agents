@@ -204,4 +204,4 @@ The same command runs as a CI step on pull requests so the gate holds for every 
 `npx llm-wiki-loop init`, ships a stricter `check_evidence.py`, and adds an event-driven
 garbage collector and a step that promotes repeated fixes in `log.md` into agent skills. Read
 it for the full loop; nothing in this skill requires it. The pattern was proposed for this
-catalog by its author in wshobson/agents issue #673.
+catalog by its author in liangquanli930/agents issue #673.

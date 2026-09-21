@@ -15,7 +15,7 @@ model release).
 |---|---|---|
 | W&B | `m7` (team under org `m7-org`) | Project: `major7-lab` |
 | Hugging Face | `major7` org | Token has `write` role; admin on `major7` |
-| GitHub Actions | `wshobson/agents` repo | CPU-side only; no GPU runners |
+| GitHub Actions | `liangquanli930/agents` repo | CPU-side only; no GPU runners |
 
 ### Shell environment
 

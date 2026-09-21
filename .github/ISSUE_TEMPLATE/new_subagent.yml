@@ -11,7 +11,7 @@ body:
         Thank you for proposing a new component! Quality components require
         careful design, clear specialization, and cross-harness portability.
 
-        Read [docs/authoring.md](https://github.com/wshobson/agents/blob/main/docs/authoring.md)
+        Read [docs/authoring.md](https://github.com/liangquanli930/agents/blob/main/docs/authoring.md)
         before submitting — it covers the portable-content style guide that
         keeps your component working across Claude Code, Codex CLI, Cursor,
         OpenCode, the Antigravity CLI, and Pi.
@@ -28,15 +28,15 @@ body:
       options:
         - label: >-
             I have read the [Code of
-            Conduct](https://github.com/wshobson/agents/blob/main/.github/CODE_OF_CONDUCT.md)
+            Conduct](https://github.com/liangquanli930/agents/blob/main/.github/CODE_OF_CONDUCT.md)
           required: true
         - label: >-
             I have read
-            [docs/authoring.md](https://github.com/wshobson/agents/blob/main/docs/authoring.md)
+            [docs/authoring.md](https://github.com/liangquanli930/agents/blob/main/docs/authoring.md)
           required: true
         - label: >-
             I have reviewed
-            [docs/plugins.md](https://github.com/wshobson/agents/blob/main/docs/plugins.md)
+            [docs/plugins.md](https://github.com/liangquanli930/agents/blob/main/docs/plugins.md)
             to ensure this isn't a duplicate
           required: true
         - label: This proposal is for legitimate, constructive use cases only

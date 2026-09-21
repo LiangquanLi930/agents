@@ -13,7 +13,7 @@ The plugin ecosystem provides two primary interfaces:
 
 The **plugin** is the unit of installation; skills and agents come along with it.
 
-1. `/plugin marketplace add wshobson/agents` registers the catalog. It loads
+1. `/plugin marketplace add liangquanli930/agents` registers the catalog. It loads
    nothing into context.
 2. `/plugin install <plugin>` installs one plugin — its agents, commands, and
    skills together. Install the 2–3 plugins that cover your domain, not
@@ -23,8 +23,8 @@ The **plugin** is the unit of installation; skills and agents come along with it
    matches a skill's description. You never select skills by hand.
 4. `AGENTS.md` and the `docs/` catalogs are for browsing what exists; reading
    them installs nothing.
-5. **Skills only, any agent.** `gh skill install wshobson/agents <skill>` and
-   `npx skills add wshobson/agents --skill <skill>` install one skill, without
+5. **Skills only, any agent.** `gh skill install liangquanli930/agents <skill>` and
+   `npx skills add liangquanli930/agents --skill <skill>` install one skill, without
    its plugin's agents or commands, into Claude Code or any other agent the
    installer supports. See [harnesses.md](./harnesses.md#skills-only-installers).
 
