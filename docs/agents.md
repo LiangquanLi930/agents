@@ -72,8 +72,6 @@ Complete reference for all **202 local specialized AI agents** organized by cate
 | [django-pro](../plugins/api-scaffolding/agents/django-pro.md)                      | sonnet | Django development with ORM and async views                                               |
 | [fastapi-pro](../plugins/api-scaffolding/agents/fastapi-pro.md)                    | sonnet | FastAPI with async patterns and Pydantic                                                  |
 | [haskell-pro](../plugins/functional-programming/agents/haskell-pro.md)             | sonnet | Strongly typed functional programming with purity, advanced type systems, and concurrency |
-| [unity-developer](../plugins/game-development/agents/unity-developer.md)           | sonnet | Unity game development and optimization                                                   |
-| [minecraft-bukkit-pro](../plugins/game-development/agents/minecraft-bukkit-pro.md) | opus   | Minecraft server plugin development                                                       |
 | [sql-pro](../plugins/database-design/agents/sql-pro.md)                            | sonnet | Complex SQL queries and database optimization                                             |
 
 ### Infrastructure & Operations
@@ -117,8 +115,6 @@ Complete reference for all **202 local specialized AI agents** organized by cate
 | [code-reviewer](../plugins/comprehensive-review/agents/code-reviewer.md)                         | opus  | Code review with security focus and production reliability      |
 | [security-auditor](../plugins/comprehensive-review/agents/security-auditor.md)                   | opus  | Vulnerability assessment and OWASP compliance                   |
 | [backend-security-coder](../plugins/data-validation-suite/agents/backend-security-coder.md)      | opus  | Secure backend coding practices, API security implementation    |
-| [frontend-security-coder](../plugins/frontend-mobile-security/agents/frontend-security-coder.md) | sonnet| XSS prevention, CSP implementation, client-side security        |
-| [mobile-security-coder](../plugins/frontend-mobile-security/agents/mobile-security-coder.md)     | opus  | Mobile security patterns, WebView security, biometric auth      |
 | [threat-modeling-expert](../plugins/security-scanning/agents/threat-modeling-expert.md)          | opus  | STRIDE threat modeling, attack trees, and security requirements |
 
 #### Testing & Debugging
@@ -136,7 +132,6 @@ Complete reference for all **202 local specialized AI agents** organized by cate
 | ---------------------------------------------------------------------------------------------- | ----- | -------------------------------------------------------------- |
 | [performance-engineer](../plugins/observability-monitoring/agents/performance-engineer.md)     | opus  | Application profiling and optimization                         |
 | [observability-engineer](../plugins/observability-monitoring/agents/observability-engineer.md) | inherit| Production monitoring, distributed tracing, SLI/SLO management |
-| [search-specialist](../plugins/content-marketing/agents/search-specialist.md)                  | haiku | Advanced web research and information synthesis                |
 
 ### Data & AI
 
@@ -181,7 +176,6 @@ Complete reference for all **202 local specialized AI agents** organized by cate
 
 | Agent                                                                        | Model  | Description                                             |
 | ---------------------------------------------------------------------------- | ------ | ------------------------------------------------------- |
-| [business-analyst](../plugins/business-analytics/agents/business-analyst.md) | sonnet | Metrics analysis, reporting, KPI tracking               |
 | [quant-analyst](../plugins/quantitative-trading/agents/quant-analyst.md)     | opus   | Financial modeling, trading strategies, market analysis |
 | [risk-manager](../plugins/quantitative-trading/agents/risk-manager.md)       | sonnet | Portfolio risk monitoring and management                |
 
@@ -189,7 +183,6 @@ Complete reference for all **202 local specialized AI agents** organized by cate
 
 | Agent                                                                             | Model  | Description                                  |
 | --------------------------------------------------------------------------------- | ------ | -------------------------------------------- |
-| [content-marketer](../plugins/content-marketing/agents/content-marketer.md)       | sonnet | Blog posts, social media, email campaigns    |
 | [social-publishing-publisher](../plugins/social-publishing/agents/social-publishing-publisher.md) | haiku | Multi-platform social media publishing via SocialClaw |
 | [sales-automator](../plugins/customer-sales-automation/agents/sales-automator.md) | haiku  | Cold emails, follow-ups, proposal generation |
 
@@ -205,23 +198,12 @@ Complete reference for all **202 local specialized AI agents** organized by cate
 
 | Agent                                                                                                     | Model  | Description                                          |
 | --------------------------------------------------------------------------------------------------------- | ------ | ---------------------------------------------------- |
-| [seo-content-auditor](../plugins/seo-content-creation/agents/seo-content-auditor.md)                      | sonnet | Content quality analysis, E-E-A-T signals assessment |
-| [seo-meta-optimizer](../plugins/seo-technical-optimization/agents/seo-meta-optimizer.md)                  | haiku  | Meta title and description optimization              |
-| [seo-keyword-strategist](../plugins/seo-technical-optimization/agents/seo-keyword-strategist.md)          | haiku  | Keyword analysis and semantic variations             |
-| [seo-structure-architect](../plugins/seo-technical-optimization/agents/seo-structure-architect.md)        | haiku  | Content structure and schema markup                  |
-| [seo-snippet-hunter](../plugins/seo-technical-optimization/agents/seo-snippet-hunter.md)                  | haiku  | Featured snippet formatting                          |
-| [seo-content-refresher](../plugins/seo-analysis-monitoring/agents/seo-content-refresher.md)               | haiku  | Content freshness analysis                           |
-| [seo-cannibalization-detector](../plugins/seo-analysis-monitoring/agents/seo-cannibalization-detector.md) | haiku  | Keyword overlap detection                            |
-| [seo-authority-builder](../plugins/seo-analysis-monitoring/agents/seo-authority-builder.md)               | sonnet | E-E-A-T signal analysis                              |
-| [seo-content-writer](../plugins/seo-content-creation/agents/seo-content-writer.md)                        | sonnet | SEO-optimized content creation                       |
-| [seo-content-planner](../plugins/seo-content-creation/agents/seo-content-planner.md)                      | haiku  | Content planning and topic clusters                  |
 
 ### Specialized Domains
 
 | Agent                                                                                   | Model  | Description                                             |
 | --------------------------------------------------------------------------------------- | ------ | ------------------------------------------------------- |
 | [arm-cortex-expert](../plugins/arm-cortex-microcontrollers/agents/arm-cortex-expert.md) | inherit| ARM Cortex-M firmware and peripheral driver development |
-| [blockchain-developer](../plugins/blockchain-web3/agents/blockchain-developer.md)       | sonnet | Web3 apps, smart contracts, DeFi protocols              |
 | [payment-integration](../plugins/payment-processing/agents/payment-integration.md)      | sonnet | Payment processor integration (Stripe, PayPal)          |
 | [legacy-modernizer](../plugins/framework-migration/agents/legacy-modernizer.md)         | fable  | Legacy code refactoring and modernization               |
 | [context-manager](../plugins/agent-orchestration/agents/context-manager.md)             | haiku  | Multi-agent context management                          |

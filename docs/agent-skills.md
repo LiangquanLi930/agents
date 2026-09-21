@@ -5,8 +5,8 @@ Agent Skills are modular packages that extend Claude's capabilities with special
 Install any skill on its own, into any agent, with the Agent Skills installers:
 
 ```bash
-gh skill install wshobson/agents <skill>              # GitHub CLI 2.90+
-npx skills add wshobson/agents --skill <skill>        # vercel-labs/skills
+gh skill install liangquanli930/agents <skill>              # GitHub CLI 2.90+
+npx skills add liangquanli930/agents --skill <skill>        # vercel-labs/skills
 ```
 
 Naming, pinning, and gotchas: [harnesses.md](./harnesses.md#skills-only-installers).
@@ -447,7 +447,7 @@ fastapi-templates skill → Supplies production-ready templates
 
 ## Specification Compliance
 
-All 183 skills follow the [Agent Skills Specification](https://agentskills.io/specification):
+All 165 skills follow the [Agent Skills Specification](https://agentskills.io/specification):
 
 - ✓ Required `name` field (hyphen-case)
 - ✓ Required `description` field with "Use when" clause
