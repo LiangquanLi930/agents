@@ -38,7 +38,6 @@ body:
       options:
         - Claude Code
         - OpenAI Codex CLI
-        - Cursor
         - OpenCode
         - Antigravity CLI
         - Pi

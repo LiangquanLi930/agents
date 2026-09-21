@@ -1,6 +1,6 @@
 # Authoring portable plugin content
 
-Plugin content in this repo ships to **six** harnesses: OpenAI Codex CLI, Cursor, OpenCode, the Google Antigravity CLI (`agy`), GitHub Copilot, and Pi. Claude Code is the source-of-truth. The adapter framework handles per-harness
+Plugin content in this repo ships to **six** harnesses: OpenAI Codex CLI, OpenCode, the Google Antigravity CLI (`agy`), GitHub Copilot, and Pi. Claude Code is the source-of-truth. The adapter framework handles per-harness
 mechanics (frontmatter rewrites, format transforms, output paths) so you author one set of
 markdown files. But content choices still affect portability — this guide tells you what to
 do, and what to avoid, so the work you do for Claude Code translates cleanly everywhere.
@@ -43,14 +43,14 @@ to invoke your skill/agent.
 
 Codex's underlying GPT-5.x models don't have a `Read`/`Edit`/`Bash` vocabulary — the model picks
 the native tool from the action you describe. OpenCode is strict about lowercase
-(`read`, `bash`). Cursor's agent has its own vocabulary.
+(`read`, `bash`). 
 
 | Don't write | Write instead |
 |---|---|
 | "Use the `Read` tool to open the file." | "Open the file." |
 | "Use the `Bash` tool to run `npm test`." | "Run `npm test`." |
 | "Call the `Grep` tool with pattern X." | "Search for pattern X." |
-| "Use `TodoWrite` to track progress." | "Track progress as you go." (No equivalent in Codex/Cursor.) |
+| "Use `TodoWrite` to track progress." | "Track progress as you go." (No equivalent in Codex.) |
 | "Spawn a subagent via the `Task` tool." | "Delegate to a subagent." (Codex: name the agent in prose.) |
 
 The `harness_portability` lint surfaces `CLAUDE_TOOL_REFS` and `CLAUDE_TOOL_PROSE` findings
@@ -149,7 +149,7 @@ clean naming — pick distinct names for skill/command pairs within a plugin.
 
 ### Model aliases
 
-| Source field | Codex | Cursor | OpenCode | Antigravity | Copilot | Pi |
+| Source field | Codex | OpenCode | Antigravity | Copilot | Pi |
 |---|---|---|---|---|---|---|
 | `model: fable` | `gpt-5.5` | `inherit` | `anthropic/claude-fable-5` | `pro` | `claude-fable-5` | `anthropic/claude-fable-5` |
 | `model: opus` | `gpt-5.5` | `inherit` | `anthropic/claude-opus-4-8` | `pro` | `claude-opus-4.8` | `anthropic/claude-opus-4-8` |
@@ -191,7 +191,7 @@ point and are taught where to look next." Apply this within each skill:
 - `assets/`: templates, configs, scaffolding. Loaded by name when the skill says "scaffold
   from `assets/config.template.ts`".
 
-This is the canonical Anthropic SKILL.md pattern. Codex, Cursor, OpenCode, Antigravity, and Pi
+This is the canonical Anthropic SKILL.md pattern. Codex, OpenCode, Antigravity, and Pi
 all honor `references/`.
 
 ## What translates poorly
@@ -203,9 +203,9 @@ Things that work in Claude Code but degrade across harnesses:
 | `TodoWrite` references | Only Claude Code and OpenCode support it. Not Antigravity, not Pi. |
 | Hooks (`hooks:` frontmatter) | Claude Code, OpenCode (via TS plugins), Antigravity (native lifecycle hooks), and Pi (via TypeScript extensions) support it. |
 | `color:` on agents | Cosmetic; dropped everywhere except Claude Code. |
-| Per-agent tool allowlist | Honored only on Claude Code/Antigravity/OpenCode, and on Pi through the subagent extension. Cursor and Codex have coarser models. |
+| Per-agent tool allowlist | Honored only on Claude Code/Antigravity/OpenCode, and on Pi through the subagent extension. Codex has a coarser model. |
 | Slash commands | Codex converts to skills. Antigravity transpiles to TOML. Copilot emits `.copilot/commands/` prompt files. Pi emits prompt templates under `.pi/prompts/`. |
-| Marketplace registry | Only Claude Code, Cursor, and Antigravity have one. Codex, OpenCode, and Pi have no marketplace; Pi installs packages from npm, git, or a local path. |
+| Marketplace registry | Only Claude Code and Antigravity have one. Codex, OpenCode, and Pi have no marketplace; Pi installs packages from npm, git, or a local path. |
 
 When you must use a feature with no equivalent, the `harness_portability` lint won't fire
 (it's not a portability problem — it's a capability gap). Just document the constraint in

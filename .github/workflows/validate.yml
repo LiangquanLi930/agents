@@ -211,8 +211,6 @@ jobs:
           name: multi-harness-output
           path: |
             .codex/
-            .cursor/
-            .cursor-plugin/
             .opencode/
             opencode.json
             .antigravity/

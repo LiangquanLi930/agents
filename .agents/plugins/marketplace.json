@@ -158,37 +158,11 @@
       "category": "Coding"
     },
     {
-      "name": "blockchain-web3",
-      "description": "Smart contract development with Solidity, DeFi protocol implementation, NFT platforms, and Web3 application architecture",
-      "source": {
-        "source": "local",
-        "path": "./plugins/blockchain-web3"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_USE"
-      },
-      "category": "Coding"
-    },
-    {
       "name": "brand-landingpage",
       "description": "Guides developers from brand discovery through iterative design to deployment-ready HTML via Stitch.",
       "source": {
         "source": "local",
         "path": "./plugins/brand-landingpage"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_USE"
-      },
-      "category": "Coding"
-    },
-    {
-      "name": "business-analytics",
-      "description": "Business metrics analysis, KPI tracking, financial reporting, and data-driven decision making",
-      "source": {
-        "source": "local",
-        "path": "./plugins/business-analytics"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -293,19 +267,6 @@
       "source": {
         "source": "local",
         "path": "./plugins/conductor"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_USE"
-      },
-      "category": "Coding"
-    },
-    {
-      "name": "content-marketing",
-      "description": "Content marketing strategy, web research, and information synthesis for marketing operations",
-      "source": {
-        "source": "local",
-        "path": "./plugins/content-marketing"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -587,32 +548,6 @@
       "category": "Coding"
     },
     {
-      "name": "frontend-mobile-development",
-      "description": "Frontend UI development and mobile application implementation across platforms",
-      "source": {
-        "source": "local",
-        "path": "./plugins/frontend-mobile-development"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_USE"
-      },
-      "category": "Coding"
-    },
-    {
-      "name": "frontend-mobile-security",
-      "description": "XSS prevention, CSRF protection, content security policies, mobile app security, and secure storage patterns",
-      "source": {
-        "source": "local",
-        "path": "./plugins/frontend-mobile-security"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_USE"
-      },
-      "category": "Coding"
-    },
-    {
       "name": "full-stack-orchestration",
       "description": "End-to-end feature orchestration with testing, security, performance, and deployment",
       "source": {
@@ -631,19 +566,6 @@
       "source": {
         "source": "local",
         "path": "./plugins/functional-programming"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_USE"
-      },
-      "category": "Coding"
-    },
-    {
-      "name": "game-development",
-      "description": "Unity game development with C# scripting, Minecraft server plugin development with Bukkit/Spigot APIs",
-      "source": {
-        "source": "local",
-        "path": "./plugins/game-development"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -990,45 +912,6 @@
       "category": "Coding"
     },
     {
-      "name": "seo-analysis-monitoring",
-      "description": "Content freshness analysis, cannibalization detection, and authority building for SEO",
-      "source": {
-        "source": "local",
-        "path": "./plugins/seo-analysis-monitoring"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_USE"
-      },
-      "category": "Coding"
-    },
-    {
-      "name": "seo-content-creation",
-      "description": "SEO content writing, planning, and quality auditing with E-E-A-T optimization",
-      "source": {
-        "source": "local",
-        "path": "./plugins/seo-content-creation"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_USE"
-      },
-      "category": "Coding"
-    },
-    {
-      "name": "seo-technical-optimization",
-      "description": "Technical SEO optimization including meta tags, keywords, structure, and featured snippets",
-      "source": {
-        "source": "local",
-        "path": "./plugins/seo-technical-optimization"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_USE"
-      },
-      "category": "Coding"
-    },
-    {
       "name": "shell-scripting",
       "description": "Production-grade Bash scripting with defensive programming, POSIX compliance, and comprehensive testing",
       "source": {
@@ -1055,19 +938,6 @@
       "category": "Coding"
     },
     {
-      "name": "signed-audit-trails",
-      "description": "Teaching skill: signed audit trails for Claude Code tool calls. Cookbook-style walkthrough of Cedar-gated tool calls with Ed25519 receipts, offline verification, and CI/CD integration. Pairs with the protect-mcp plugin.",
-      "source": {
-        "source": "local",
-        "path": "./plugins/signed-audit-trails"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_USE"
-      },
-      "category": "Coding"
-    },
-    {
       "name": "skill-forge-essentials",
       "description": "Three behavioral skills addressing AI-specific failure patterns: hidden code debt from agent generation, context compaction amnesia, and imprecise Design Mode edits",
       "source": {
@@ -1086,19 +956,6 @@
       "source": {
         "source": "local",
         "path": "./plugins/social-publishing"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_USE"
-      },
-      "category": "Coding"
-    },
-    {
-      "name": "startup-business-analyst",
-      "description": "Comprehensive startup business analysis with market sizing (TAM/SAM/SOM), financial modeling, team planning, and strategic research",
-      "source": {
-        "source": "local",
-        "path": "./plugins/startup-business-analyst"
       },
       "policy": {
         "installation": "AVAILABLE",

@@ -199,45 +199,6 @@ class TestOpenCodeRoundTrip:
 
 
 @pytest.mark.skipif(
-    not (WORKTREE / ".cursor-plugin").is_dir(),
-    reason="Cursor artifacts not generated (run `make generate HARNESS=cursor` first)",
-)
-class TestCursorRoundTrip:
-    def test_cursor_marketplace_lists_all_local_plugins(self):
-        marketplace = WORKTREE / ".cursor-plugin" / "marketplace.json"
-        data = json.loads(marketplace.read_text())
-        cursor_names = {p["name"] for p in data["plugins"]}
-        local_plugins = set(list_plugins())
-        # Cursor marketplace mirrors the Claude marketplace, so it should include the
-        # external git-subdir plugin (pensyve) too.
-        assert local_plugins.issubset(cursor_names), (
-            f"Cursor marketplace missing plugins: {local_plugins - cursor_names}"
-        )
-
-    def test_cursor_per_plugin_manifests_exist(self):
-        per_plugin = WORKTREE / ".cursor-plugin" / "plugins"
-        if not per_plugin.is_dir():
-            pytest.skip("per-plugin manifests not generated")
-        manifest_names = {p.stem for p in per_plugin.glob("*.json")}
-        local_plugins = set(list_plugins())
-        missing = local_plugins - manifest_names
-        assert not missing, f"Cursor per-plugin manifests missing for: {sorted(missing)}"
-
-    def test_cursor_rules_only_use_allowed_keys(self):
-        rules_dir = WORKTREE / ".cursor" / "rules"
-        if not rules_dir.is_dir():
-            pytest.skip(".cursor/rules/ not generated")
-        allowed = {"description", "globs", "alwaysApply"}
-        problems = []
-        for mdc in rules_dir.glob("*.mdc"):
-            fm, _ = parse_frontmatter(mdc.read_text())
-            invalid_keys = set(fm.keys()) - allowed
-            if invalid_keys:
-                problems.append(f"{mdc.name}: invalid MDC keys {sorted(invalid_keys)}")
-        assert not problems, "MDC frontmatter violations:\n  " + "\n  ".join(problems)
-
-
-@pytest.mark.skipif(
     not (WORKTREE / ".copilot").is_dir(),
     reason="Copilot artifacts not generated (run `make generate HARNESS=copilot` first)",
 )
@@ -427,7 +388,7 @@ class TestPiRoundTrip:
 class TestNativeInstallManifests:
     """Committed registries each harness's native plugin manager installs from.
 
-    These are committed (not gitignored) so Codex + Cursor install straight from a clone;
+    These are committed (not gitignored) so Codex installs straight from a clone;
     they point at the source `plugins/` dirs (no duplicated skill/agent trees).
     """
 

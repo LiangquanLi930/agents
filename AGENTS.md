@@ -1,8 +1,8 @@
 # claude-agents — multi-harness agentic plugin marketplace
 
-Production-ready agentic-workflow building blocks: **83 plugins** (81 local + 2 external), **180 agents**, **165 skills**, **100 commands**. Native source-of-truth for Claude Code; also consumed by OpenAI Codex CLI, Cursor, OpenCode, the Google Antigravity CLI (`agy`), and Pi from a single Markdown source.
+Production-ready agentic-workflow building blocks: **83 plugins** (81 local + 2 external), **180 agents**, **165 skills**, **100 commands**. Native source-of-truth for Claude Code; also consumed by OpenAI Codex CLI, OpenCode, the Google Antigravity CLI (`agy`), and Pi from a single Markdown source.
 
-This file is the canonical context file. Codex / Cursor / OpenCode / Antigravity CLI / Pi read it directly. Claude Code reads it via `CLAUDE.md`, a symlink to this file.
+This file is the canonical context file. Codex / OpenCode / Antigravity CLI / Pi read it directly. Claude Code reads it via `CLAUDE.md`, a symlink to this file.
 
 > **Read this file like a table of contents.** Detail lives in `docs/`. Authoring conventions live in `docs/authoring.md`. Per-harness setup and capability deltas live in [`docs/harnesses.md`](docs/harnesses.md). This file should never grow beyond ~150 lines (per OpenAI's [harness-engineering](https://openai.com/index/harness-engineering/) practice).
 
@@ -43,7 +43,6 @@ CI (`.github/workflows/validate.yml`) runs all four on every PR plus installs Op
 
 ```bash
 make generate HARNESS=codex        # .codex/skills, .codex/agents, .codex/plugins/<p>/, .agents/plugins/marketplace.json
-make generate HARNESS=cursor       # .cursor-plugin/{marketplace,plugin}.json, .cursor/rules/
 make generate HARNESS=opencode     # .opencode/{skills,agents,commands,plugins}/, opencode.json
 make generate HARNESS=antigravity  # .antigravity/plugins/<p>/
 make generate HARNESS=pi           # .pi/{skills,prompts,agents}/
@@ -59,7 +58,6 @@ The small per-harness registries are **committed** so each harness installs nati
 - **Claude Code**: auto-discovery via Anthropic's SKILL.md spec
 - **Codex CLI**: mirrored to `.codex/skills/<plugin>__<skill>/` (8 KB body cap; detail in `references/details.md`)
 - **OpenCode**: mirrored to `.opencode/skills/<plugin>-<skill>/` using hyphenated names for global install
-- **Cursor**: reads `.claude/skills/` directly (no re-emit)
 - **Antigravity CLI**: native plugins at `.antigravity/plugins/<p>/` — bare `skills/<skill>/SKILL.md` (no `<plugin>__` namespacing; the plugin dir already scopes it)
 - **Pi**: mirrored to `.pi/skills/<plugin>/<skill>/`; discovery is recursive so names stay bare
 - **Skills-only installers**: `gh skill install liangquanli930/agents` and `npx skills add liangquanli930/agents` read `plugins/*/skills/` from GitHub directly (see `docs/harnesses.md`); `make smoke-test` runs both plus the agentskills.io spec check
@@ -72,7 +70,6 @@ The small per-harness registries are **committed** so each harness installs nati
 - **OpenCode**: `.opencode/agents/<plugin>__<agent>.md` with `mode: subagent` + `permission:` block (locked agents — those with source `tools: []` — get deny-everything except base `skill`/`task`)
 - **Antigravity CLI**: `.antigravity/plugins/<p>/agents/<agent>.md` (Markdown + YAML frontmatter, `model:` is a tier alias — `inherit`/`flash`/`pro`); TOML commands at `commands/<p>/<cmd>.toml` (agy reports these as "converted to skills"); global install via `make install-antigravity` symlinks each plugin into `~/.gemini/antigravity-cli/plugins/`
 - **Pi**: `.pi/agents/<plugin>__<agent>.md` in the reference `subagent` extension's format (name, description, tools, model); commands become prompt templates at `.pi/prompts/<plugin>__<cmd>.md`
-- **Cursor**: reads `.claude/agents/` directly
 
 ## Why this file is short
 

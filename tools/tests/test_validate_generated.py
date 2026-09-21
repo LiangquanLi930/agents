@@ -11,7 +11,6 @@ from tools.validate_generated import (
     validate_antigravity,
     validate_codex,
     validate_copilot,
-    validate_cursor,
     validate_opencode,
     validate_pi,
 )
@@ -90,60 +89,6 @@ class TestCodexValidator:
         validate_codex(report)
         assert any(
             "AGENTS.md" in str(f.path) and "cap: 150" in f.message for f in report.warnings()
-        )
-
-
-# ── Cursor ───────────────────────────────────────────────────────────────────
-
-
-class TestCursorValidator:
-    def test_marketplace_missing_owner_errors(
-        self, tmp_path: Path, monkeypatch: pytest.MonkeyPatch
-    ):
-        _patch_worktree(monkeypatch, tmp_path)
-        (tmp_path / ".cursor-plugin").mkdir()
-        (tmp_path / ".cursor-plugin" / "marketplace.json").write_text(
-            json.dumps({"name": "x", "plugins": []})
-        )
-
-        report = Report()
-        validate_cursor(report)
-        assert any("owner" in f.message for f in report.errors())
-
-    def test_plugin_entry_using_path_instead_of_source_errors(
-        self, tmp_path: Path, monkeypatch: pytest.MonkeyPatch
-    ):
-        _patch_worktree(monkeypatch, tmp_path)
-        (tmp_path / ".cursor-plugin").mkdir()
-        (tmp_path / ".cursor-plugin" / "marketplace.json").write_text(
-            json.dumps(
-                {
-                    "name": "x",
-                    "owner": {"name": "me"},
-                    "plugins": [{"name": "demo", "path": "./plugins/demo"}],
-                }
-            )
-        )
-
-        report = Report()
-        validate_cursor(report)
-        assert any("source" in f.message for f in report.errors())
-
-    def test_invalid_mdc_keys_error(self, tmp_path: Path, monkeypatch: pytest.MonkeyPatch):
-        _patch_worktree(monkeypatch, tmp_path)
-        rules = tmp_path / ".cursor" / "rules"
-        rules.mkdir(parents=True)
-        (rules / "bad.mdc").write_text(
-            "---\ndescription: Use when testing.\nagentRequested: true\nmode: auto\n---\n\nBody.\n"
-        )
-        # Need .cursor-plugin to exist for validator to proceed
-        (tmp_path / ".cursor-plugin").mkdir()
-
-        report = Report()
-        validate_cursor(report)
-        assert any(
-            "agentRequested" in f.message or "invalid MDC keys" in f.message
-            for f in report.errors()
         )
 
 
