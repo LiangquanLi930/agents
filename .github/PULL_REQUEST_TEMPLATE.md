@@ -1,6 +1,6 @@
 <!--
 Thanks for the PR. A few quick orientation pointers:
-- AGENTS.md is the canonical context file (read by Codex/Cursor/OpenCode/Antigravity CLI/Pi;
+- AGENTS.md is the canonical context file (read by Codex/OpenCode/Antigravity CLI/Pi;
   CLAUDE.md is a symlink to AGENTS.md).
 - docs/authoring.md is the portable-content style guide.
 - If you touched plugin source, run `make generate-all` to refresh the committed
@@ -31,7 +31,6 @@ Thanks for the PR. A few quick orientation pointers:
 
 - [ ] Claude Code
 - [ ] OpenAI Codex CLI
-- [ ] Cursor
 - [ ] OpenCode
 - [ ] Antigravity CLI
 - [ ] Pi
@@ -54,7 +53,6 @@ Thanks for the PR. A few quick orientation pointers:
 Only if you touched plugin content. Per docs/authoring.md:
 - Codex caps skill bodies at 8 KB
 - OpenCode requires lowercase tool names
-- Cursor doesn't honor per-agent tools: allowlists
 - Context files ≤150 lines
 -->
 

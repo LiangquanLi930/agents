@@ -12,7 +12,6 @@ load the generated artifacts and report what it found.
 | **OpenCode** | 1.1.23 | ✅ pass | 191 / 191 subagents discovered | All emitted agents pass OpenCode's parser. 2 OpenCode built-ins (`explore`, `general`) appear alongside ours. |
 | **Antigravity CLI** | agy 1.1.14 | ✅ pass (2026-08-18) | `agy plugin validate` passes for 91/91 generated plugins | Self-contained plugins at `.antigravity/plugins/<p>/`; `agy plugin install` + `agy plugin list` confirm discovery. Gemini CLI's harness support was retired May 2026 (Google deprecation) and is superseded by this row. |
 | **Codex CLI** | 0.133.0 | ✅ pass (structural) | All 191 agent TOMLs parse via Python `tomllib`; AGENTS.md within budget (43 lines / 500 tokens) | Codex doctor surfaces no errors; deeper "did the model actually load the skill" requires interactive verification. |
-| **Cursor** | (editor-only) | n/a | n/a | No CLI; manual verification recipe below. |
 | **Copilot** | (structural) | ✅ pass | 191 agent profiles, 155 skills, 25 commands all validated | No CLI round-trip tool yet; structural validation via `make validate` passes. |
 | **Pi** | 0.85.1 | ✅ pass | 100 / 100 prompt templates and 165 / 165 skills expand | Expansion is checked in json mode with every Anthropic credential variable set to an invalid value and the base URL pointed at a closed port, so the model call fails before any request is completed and no tokens are billed. Runs in CI via `make smoke-test`. |
 | **gh skill** | gh 2.98.0 | ✅ pass (2026-09-01) | 165 / 165 source skills discovered; `gh skill publish --dry-run` passes | Discovery through the `plugins/{scope}/skills/*/SKILL.md` convention; installs by bare skill name. Runs in CI via `make smoke-test`. |
@@ -142,20 +141,6 @@ gh skill install liangquanli930/agents python-testing-patterns --dir /tmp/gh-ski
 npx skills add liangquanli930/agents --skill python-testing-patterns --list
 ```
 
-### Cursor (no CLI)
-
-```bash
-# Generate
-make generate HARNESS=cursor
-# Manually:
-# 1. Open Cursor 2.5+
-# 2. Settings → Plugins → Add Local Plugin Source
-# 3. Point at /path/to/claude-agents/
-# 4. Verify the marketplace browser lists all 81 local plugins
-# 5. Verify .cursor/rules/*.mdc files activate per their `globs`
-# 6. Skills under .claude/skills/ should auto-trigger from descriptions
-```
-
 ### Copilot (no CLI round-trip yet)
 
 ```bash
@@ -208,8 +193,6 @@ the artifacts at runtime. Specifically untested by the automated suite:
 - Whether Codex's skill discovery actually selects our skills on relevant prompts (vs.
   ignoring them or selecting wrong ones).
 - Whether OpenCode's `task` tool dispatches our subagents end-to-end.
-- Whether Cursor 2.5+ marketplace browser displays our plugin entries (requires the
-  editor; can't be scripted).
 - Whether Antigravity's `invoke_subagent` actually dispatches our generated subagent
   against a real prompt (agy's `plugin validate` is structural only).
 - Whether Copilot's agent profile and skill discovery actually loads our artifacts

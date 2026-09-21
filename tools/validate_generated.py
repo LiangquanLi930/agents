@@ -219,102 +219,6 @@ def validate_codex(report: Report) -> None:
             )
 
 
-# ── Cursor validators ────────────────────────────────────────────────────────
-
-
-_ALLOWED_MDC_KEYS = {"description", "globs", "alwaysApply"}
-
-
-def validate_cursor(report: Report) -> None:
-    root = WORKTREE / ".cursor-plugin"
-    if not root.is_dir():
-        return
-
-    # 1. marketplace.json shape
-    marketplace = root / "marketplace.json"
-    if marketplace.is_file():
-        try:
-            data = json.loads(marketplace.read_text(encoding="utf-8"))
-        except json.JSONDecodeError as e:
-            report.add(
-                severity="error",
-                harness="cursor",
-                path=marketplace,
-                message=f"JSON parse error: {e}",
-                remediation="Regenerate via `make generate HARNESS=cursor --all`.",
-            )
-            return
-        if "owner" not in data:
-            report.add(
-                severity="error",
-                harness="cursor",
-                path=marketplace,
-                message="marketplace.json missing required `owner` field",
-                remediation="Cursor 2.5+ requires owner.name in marketplace.json.",
-            )
-        for entry in data.get("plugins", []):
-            if "source" not in entry:
-                report.add(
-                    severity="error",
-                    harness="cursor",
-                    path=marketplace,
-                    message=f"plugin entry {entry.get('name', '<unnamed>')} missing `source`",
-                    remediation="Cursor uses `source` (not `path` or `url`) per plugin entry.",
-                )
-
-    # 2. Each per-plugin manifest parses
-    plugins_dir = root / "plugins"
-    if plugins_dir.is_dir():
-        for manifest in plugins_dir.glob("*.json"):
-            try:
-                data = json.loads(manifest.read_text(encoding="utf-8"))
-            except json.JSONDecodeError as e:
-                report.add(
-                    severity="error",
-                    harness="cursor",
-                    path=manifest,
-                    message=f"JSON parse error: {e}",
-                    remediation="Regenerate via `make generate HARNESS=cursor`.",
-                )
-                continue
-            if "name" not in data:
-                report.add(
-                    severity="error",
-                    harness="cursor",
-                    path=manifest,
-                    message="missing required `name` field",
-                    remediation="Every Cursor plugin.json needs a name.",
-                )
-
-    # 3. .cursor/rules/*.mdc — only the three allowed frontmatter keys
-    rules_dir = WORKTREE / ".cursor" / "rules"
-    if rules_dir.is_dir():
-        for mdc in rules_dir.glob("*.mdc"):
-            content = mdc.read_text(encoding="utf-8")
-            fm, _ = parse_frontmatter(content)
-            if not fm:
-                report.add(
-                    severity="error",
-                    harness="cursor",
-                    path=mdc,
-                    message="missing or invalid frontmatter",
-                    remediation="MDC files need YAML frontmatter with at least `description:`.",
-                )
-                continue
-            invalid = set(fm.keys()) - _ALLOWED_MDC_KEYS
-            if invalid:
-                report.add(
-                    severity="error",
-                    harness="cursor",
-                    path=mdc,
-                    message=f"invalid MDC keys: {sorted(invalid)}",
-                    remediation=(
-                        "Cursor only supports description/globs/alwaysApply. "
-                        "Keys like agentRequested:, mode:, tags: are folklore."
-                    ),
-                )
-
-
 # ── OpenCode validators ──────────────────────────────────────────────────────
 
 
@@ -843,7 +747,6 @@ def validate_copilot(report: Report) -> None:
 _VALIDATORS = {
     "codex": validate_codex,
     "copilot": validate_copilot,
-    "cursor": validate_cursor,
     "opencode": validate_opencode,
     "antigravity": validate_antigravity,
     "pi": validate_pi,

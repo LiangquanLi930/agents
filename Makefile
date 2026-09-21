@@ -28,7 +28,7 @@ help:
 	@echo "claude-agents — multi-harness plugin marketplace"
 	@echo "================================================="
 	@echo ""
-	@echo "Multi-harness adapter (Codex / Cursor / OpenCode / Antigravity / Pi):"
+	@echo "Multi-harness adapter (Codex / OpenCode / Antigravity / Pi):"
 	@echo "  make generate HARNESS=<h> [PLUGIN=<p>]           Generate per-harness artifacts (defaults to all plugins)"
 	@echo "  make generate-all                                Generate for ALL harnesses + ALL plugins"
 	@echo "  make clean-generated [HARNESS=<h>]               Remove generated artifacts"
@@ -164,11 +164,11 @@ clean:
 #
 # Usage:
 #   make generate HARNESS=codex PLUGIN=javascript-typescript   # one plugin
-#   make generate HARNESS=cursor                               # all plugins (default)
+#   make generate HARNESS=opencode                             # all plugins (default)
 #   make generate-all
 #   make clean-generated HARNESS=opencode
 
-HARNESSES := codex copilot cursor opencode antigravity pi
+HARNESSES := codex copilot opencode antigravity pi
 
 generate:
 ifndef HARNESS

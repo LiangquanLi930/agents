@@ -1,7 +1,7 @@
 # Contributing to claude-agents
 
-Thanks for your interest in contributing. This marketplace ships to seven agentic
-harnesses (Claude Code, OpenAI Codex CLI, Cursor, OpenCode, the Antigravity CLI, GitHub Copilot, Pi) from a single
+Thanks for your interest in contributing. This marketplace ships to six agentic
+harnesses (Claude Code, OpenAI Codex CLI, OpenCode, the Antigravity CLI, GitHub Copilot, Pi) from a single
 Markdown source.
 
 ## Start here
@@ -97,13 +97,12 @@ disagrees with CI.
 
 ## Cross-harness portability checklist
 
-Your content ships to seven harnesses — some have stricter conventions than Claude Code:
+Your content ships to six harnesses — some have stricter conventions than Claude Code:
 
 - **Codex** hard-truncates skill bodies at 8 KB. Keep `SKILL.md` short; push detail
   into `references/details.md`.
 - **OpenCode** requires lowercase tool names. Don't write `` `Read` `` inline — write
   *"open the file"* or use the lowercase form.
-- **Cursor** doesn't honor per-agent `tools:` allowlists — use it as a hint only.
 - **Copilot** maps Claude model aliases (`opus`/`sonnet`/`haiku`) to the GPT-5 family;
   agent `description` must be a plain string.
 - **Antigravity CLI** passes unmapped tool names through its allowlist unchanged;

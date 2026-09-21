@@ -2,12 +2,12 @@
 
 > Production-ready agentic workflow building blocks: **83 plugins**, **180 agents**,
 > **165 skills**, **100 commands** — built for Claude Code and consumed natively by
-> OpenAI Codex CLI, Cursor, OpenCode, the Antigravity CLI, GitHub Copilot, and Pi from a single Markdown source.
+> OpenAI Codex CLI, OpenCode, the Antigravity CLI, GitHub Copilot, and Pi from a single Markdown source.
 
-[![Claude Code](https://img.shields.io/badge/Claude%20Code-native-blueviolet)](#claude-code) [![Codex CLI](https://img.shields.io/badge/Codex%20CLI-supported-black)](docs/harnesses.md) [![Cursor](https://img.shields.io/badge/Cursor-supported-purple)](docs/harnesses.md) [![OpenCode](https://img.shields.io/badge/OpenCode-supported-green)](docs/harnesses.md) [![Antigravity CLI](https://img.shields.io/badge/Antigravity%20CLI-supported-blue)](docs/harnesses.md) [![Copilot](https://img.shields.io/badge/Copilot-supported-lightgrey)](docs/harnesses.md) [![Pi](https://img.shields.io/badge/Pi-supported-orange)](docs/harnesses.md)
+[![Claude Code](https://img.shields.io/badge/Claude%20Code-native-blueviolet)](#claude-code) [![Codex CLI](https://img.shields.io/badge/Codex%20CLI-supported-black)](docs/harnesses.md) [![OpenCode](https://img.shields.io/badge/OpenCode-supported-green)](docs/harnesses.md) [![Antigravity CLI](https://img.shields.io/badge/Antigravity%20CLI-supported-blue)](docs/harnesses.md) [![Copilot](https://img.shields.io/badge/Copilot-supported-lightgrey)](docs/harnesses.md) [![Pi](https://img.shields.io/badge/Pi-supported-orange)](docs/harnesses.md)
 
 > [!NOTE]
-> One source-of-truth (`plugins/`), six target harnesses. Each harness gets idiomatic,
+> One source-of-truth (`plugins/`), five target harnesses. Each harness gets idiomatic,
 > harness-native artifacts — not lowest-common-denominator translations.
 > See [docs/harnesses.md](docs/harnesses.md) for the capability matrix.
 
@@ -24,13 +24,12 @@ Pick your harness:
 
 [→ Full Claude Code setup, troubleshooting, and plugin catalog](docs/usage.md)
 
-### Codex CLI · Cursor · OpenCode · Antigravity CLI · Copilot · Pi
+### Codex CLI · OpenCode · Antigravity CLI · Copilot · Pi
 
-Codex and Cursor install natively from the committed registries (which point at the source `plugins/`):
+Codex installs natively from the committed registries (which point at the source `plugins/`):
 
 ```bash
 npx codex-marketplace add liangquanli930/agents        # Codex; then install individual plugins
-# Cursor: add the marketplace, then `/plugin install <name>` (reads .cursor-plugin/ + source)
 ```
 
 Antigravity, OpenCode, and Pi install via clone + generate (the transformed trees are gitignored):
@@ -94,26 +93,25 @@ Tiered model strategy:
 
 ## Multi-harness support
 
-This marketplace ships to seven agentic harnesses from one Markdown source. Each adapter
+This marketplace ships to five agentic harnesses from one Markdown source. Each adapter
 emits harness-native artifacts (not lowest-common-denominator translations):
 
 | Harness | Generates | Notes |
 |---|---|---|
 | **Claude Code** | (source-of-truth) | Native `marketplace.json` + `plugins/` |
 | **Codex CLI** | `.agents/plugins/marketplace.json` + `plugins/*/.codex-plugin/plugin.json` (committed); `.codex/skills/`, `.codex/agents/` (gitignored) | 8 KB skill cap respected; commands → skills |
-| **Cursor** | `.cursor-plugin/`, `.cursor/rules/` | Thin marketplace + curated rules; reuses `.claude/` |
 | **OpenCode** | `.opencode/agents/`, `.opencode/commands/`, `.opencode/skills/` | `permission:` block from `tools:` allowlist; OpenCode-safe skill names |
 | **Antigravity CLI** | `.antigravity/plugins/<p>/{skills/,agents/,commands/}` | Self-contained agy plugin per source plugin; model tier alias (`inherit`/`flash`/`pro`) |
 | **Copilot** | `.copilot/agents/`, `.copilot/skills/`, `.copilot/commands/` | Markdown agent profiles + SKILL.md skills + commands-as-skills; model maps to native Claude models |
 | **Pi** | `.pi/{skills/<plugin>/<skill>/,prompts/<plugin>__<cmd>.md,agents/<plugin>__<agent>.md}` | Skills discovered recursively; commands become prompt templates; agents use the reference subagent-extension format; the generator owns only those three subdirectories, so your own files elsewhere under `.pi/` are left alone |
 
 ```bash
-make generate-all                        # all six
+make generate-all                        # all five
 make validate                            # structural checks
 make garden                              # drift / dead-link / cap detection
 ```
 
-Codex and Cursor install from source via committed registries; Antigravity, OpenCode, and Pi install via clone + `make`. Individual skills install into any agent with `gh skill install liangquanli930/agents` or `npx skills add liangquanli930/agents`, no clone needed.
+Codex installs from source via committed registries; Antigravity, OpenCode, and Pi install via clone + `make`. Individual skills install into any agent with `gh skill install liangquanli930/agents` or `npx skills add liangquanli930/agents`, no clone needed.
 
 [→ Full capability matrix and per-harness deep-dives](docs/harnesses.md)
 
@@ -155,13 +153,12 @@ Contributing: [CONTRIBUTING.md](CONTRIBUTING.md) · Authoring: [docs/authoring.m
 
 [Pensyve](https://github.com/major7apps/pensyve) is included as an external
 `git-subdir` entry for Claude Code. Pensyve also maintains direct upstream
-integrations for Codex CLI, Cursor, OpenCode, and Copilot (not yet the Antigravity CLI or Pi).
+integrations for Codex CLI, OpenCode, and Copilot (not yet the Antigravity CLI or Pi).
 
 | Harness | Pensyve integration |
 |---|---|
 | Claude Code | `/plugin install pensyve` from this marketplace (`integrations/claude-code`) |
 | Codex CLI | [integrations/codex-plugin](https://github.com/major7apps/pensyve/tree/main/integrations/codex-plugin) |
-| Cursor | [integrations/cursor](https://github.com/major7apps/pensyve/tree/main/integrations/cursor) |
 | OpenCode | [integrations/opencode-plugin](https://github.com/major7apps/pensyve/tree/main/integrations/opencode-plugin) |
 | Copilot | `.copilot/` in repo root or `~/.copilot/` via `make install-copilot` |
 
@@ -173,7 +170,7 @@ payload in [hashgraph-online/hol-guard-plugin](https://github.com/hashgraph-onli
 The payload exposes local `hol-guard` and `plugin-scanner` skills. Guard Cloud is neither
 required nor promoted on the default path. This marketplace entry is a Claude Code
 discovery surface only; it does not add HOL Guard to this repository's generated Codex,
-Cursor, OpenCode, Antigravity, Copilot, or Pi outputs.
+OpenCode, Antigravity, Copilot, or Pi outputs.
 
 The reviewed external payload is pinned to commit `43b2dda59e9f07057c52e69fd7426188faae1488`. Its local CLI pins are
 `hol-guard==2.2.119` and `plugin-scanner==2.2.119`, and installation requires user approval.
