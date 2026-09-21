@@ -29,7 +29,7 @@ this one.
 ### 1. Install the plugin
 
 ```bash
-claude plugin install wshobson/agents/review-agent-governance
+claude plugin install liangquanli930/agents/review-agent-governance
 ```
 
 ### 2. Copy the default policy to your project

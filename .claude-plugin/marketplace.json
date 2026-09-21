@@ -1,12 +1,11 @@
 {
   "name": "claude-code-workflows",
   "owner": {
-    "name": "Seth Hobson",
-    "email": "seth@major7apps.com",
-    "url": "https://github.com/wshobson"
+    "name": "Liangquan Li",
+    "url": "https://github.com/liangquanli930"
   },
   "metadata": {
-    "description": "Production-ready workflow orchestration with 92 marketplace plugins, 202 local specialized agents, and 181 local skills - optimized for granular installation and minimal token usage",
+    "description": "Production-ready workflow orchestration with 83 marketplace plugins, 180 local specialized agents, and 165 local skills - optimized for granular installation and minimal token usage",
     "version": "1.7.1"
   },
   "plugins": [
@@ -32,7 +31,7 @@
         "name": "Seth Hobson",
         "email": "seth@major7apps.com"
       },
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT",
       "category": "documentation"
     },
@@ -45,7 +44,7 @@
         "name": "Seth Hobson",
         "email": "seth@major7apps.com"
       },
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT",
       "category": "development"
     },
@@ -58,7 +57,7 @@
         "name": "Seth Hobson",
         "email": "seth@major7apps.com"
       },
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT",
       "category": "workflows"
     },
@@ -84,20 +83,7 @@
         "name": "Seth Hobson",
         "email": "seth@major7apps.com"
       },
-      "homepage": "https://github.com/wshobson/agents",
-      "license": "MIT",
-      "category": "development"
-    },
-    {
-      "name": "frontend-mobile-development",
-      "source": "./plugins/frontend-mobile-development",
-      "description": "Frontend UI development and mobile application implementation across platforms",
-      "version": "1.2.3",
-      "author": {
-        "name": "Seth Hobson",
-        "email": "seth@major7apps.com"
-      },
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT",
       "category": "development"
     },
@@ -110,7 +96,7 @@
         "name": "Seth Hobson",
         "email": "seth@major7apps.com"
       },
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT",
       "category": "workflows"
     },
@@ -123,7 +109,7 @@
         "name": "Seth Hobson",
         "email": "seth@major7apps.com"
       },
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT",
       "category": "testing"
     },
@@ -136,7 +122,7 @@
         "name": "Seth Hobson",
         "email": "seth@major7apps.com"
       },
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT",
       "category": "workflows"
     },
@@ -149,7 +135,7 @@
         "name": "Seth Hobson",
         "email": "seth@major7apps.com"
       },
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT",
       "category": "utilities"
     },
@@ -162,7 +148,7 @@
         "name": "Seth Hobson",
         "email": "seth@major7apps.com"
       },
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT",
       "category": "utilities"
     },
@@ -175,7 +161,7 @@
         "name": "Seth Hobson",
         "email": "seth@major7apps.com"
       },
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT",
       "category": "utilities"
     },
@@ -188,7 +174,7 @@
         "name": "Seth Hobson",
         "email": "seth@major7apps.com"
       },
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT",
       "category": "utilities"
     },
@@ -202,7 +188,7 @@
       },
       "source": "./plugins/llm-application-dev",
       "category": "ai-ml",
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT"
     },
     {
@@ -215,7 +201,7 @@
       },
       "source": "./plugins/llm-finetuning",
       "category": "ai-ml",
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT"
     },
     {
@@ -227,7 +213,7 @@
         "name": "Seth Hobson",
         "email": "seth@major7apps.com"
       },
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT",
       "category": "ai-ml"
     },
@@ -240,7 +226,7 @@
         "name": "Seth Hobson",
         "email": "seth@major7apps.com"
       },
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT",
       "category": "ai-ml"
     },
@@ -254,7 +240,7 @@
       },
       "source": "./plugins/machine-learning-ops",
       "category": "ai-ml",
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT"
     },
     {
@@ -267,7 +253,7 @@
       },
       "source": "./plugins/data-engineering",
       "category": "data",
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT"
     },
     {
@@ -280,7 +266,7 @@
       },
       "source": "./plugins/incident-response",
       "category": "operations",
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT"
     },
     {
@@ -293,7 +279,7 @@
       },
       "source": "./plugins/error-diagnostics",
       "category": "operations",
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT"
     },
     {
@@ -306,7 +292,7 @@
       },
       "source": "./plugins/distributed-debugging",
       "category": "operations",
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT"
     },
     {
@@ -319,7 +305,7 @@
       },
       "source": "./plugins/observability-monitoring",
       "category": "operations",
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT"
     },
     {
@@ -332,7 +318,7 @@
       },
       "source": "./plugins/deployment-strategies",
       "category": "infrastructure",
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT"
     },
     {
@@ -345,7 +331,7 @@
       },
       "source": "./plugins/deployment-validation",
       "category": "infrastructure",
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT"
     },
     {
@@ -358,7 +344,7 @@
       },
       "source": "./plugins/kubernetes-operations",
       "category": "infrastructure",
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT"
     },
     {
@@ -371,7 +357,7 @@
       },
       "source": "./plugins/cloud-infrastructure",
       "category": "infrastructure",
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT"
     },
     {
@@ -384,7 +370,7 @@
       },
       "source": "./plugins/cicd-automation",
       "category": "infrastructure",
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT"
     },
     {
@@ -396,7 +382,7 @@
         "name": "Seth Hobson",
         "email": "seth@major7apps.com"
       },
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT",
       "category": "performance"
     },
@@ -409,7 +395,7 @@
         "name": "Seth Hobson",
         "email": "seth@major7apps.com"
       },
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT",
       "category": "performance"
     },
@@ -422,7 +408,7 @@
         "name": "Seth Hobson",
         "email": "seth@major7apps.com"
       },
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT",
       "category": "quality"
     },
@@ -435,7 +421,7 @@
         "name": "Seth Hobson",
         "email": "seth@major7apps.com"
       },
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT",
       "category": "quality"
     },
@@ -448,7 +434,7 @@
         "name": "Seth Hobson",
         "email": "seth@major7apps.com"
       },
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT",
       "category": "modernization"
     },
@@ -461,7 +447,7 @@
         "name": "Seth Hobson",
         "email": "seth@major7apps.com"
       },
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT",
       "category": "modernization"
     },
@@ -474,7 +460,7 @@
         "name": "Seth Hobson",
         "email": "seth@major7apps.com"
       },
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT",
       "category": "database"
     },
@@ -487,7 +473,7 @@
         "name": "Seth Hobson",
         "email": "seth@major7apps.com"
       },
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT",
       "category": "database"
     },
@@ -501,7 +487,7 @@
       },
       "source": "./plugins/security-scanning",
       "category": "security",
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT"
     },
     {
@@ -514,7 +500,7 @@
       },
       "source": "./plugins/security-compliance",
       "category": "security",
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT"
     },
     {
@@ -527,20 +513,7 @@
       },
       "source": "./plugins/backend-api-security",
       "category": "security",
-      "homepage": "https://github.com/wshobson/agents",
-      "license": "MIT"
-    },
-    {
-      "name": "frontend-mobile-security",
-      "description": "XSS prevention, CSRF protection, content security policies, mobile app security, and secure storage patterns",
-      "version": "1.2.1",
-      "author": {
-        "name": "Seth Hobson",
-        "email": "seth@major7apps.com"
-      },
-      "source": "./plugins/frontend-mobile-security",
-      "category": "security",
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT"
     },
     {
@@ -553,7 +526,7 @@
       },
       "source": "./plugins/data-validation-suite",
       "category": "data",
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT"
     },
     {
@@ -565,7 +538,7 @@
         "name": "Seth Hobson",
         "email": "seth@major7apps.com"
       },
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT",
       "category": "api"
     },
@@ -578,48 +551,9 @@
         "name": "Seth Hobson",
         "email": "seth@major7apps.com"
       },
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT",
       "category": "api"
-    },
-    {
-      "name": "seo-content-creation",
-      "source": "./plugins/seo-content-creation",
-      "description": "SEO content writing, planning, and quality auditing with E-E-A-T optimization",
-      "version": "1.2.1",
-      "author": {
-        "name": "Seth Hobson",
-        "email": "seth@major7apps.com"
-      },
-      "homepage": "https://github.com/wshobson/agents",
-      "license": "MIT",
-      "category": "marketing"
-    },
-    {
-      "name": "seo-technical-optimization",
-      "source": "./plugins/seo-technical-optimization",
-      "description": "Technical SEO optimization including meta tags, keywords, structure, and featured snippets",
-      "version": "1.2.1",
-      "author": {
-        "name": "Seth Hobson",
-        "email": "seth@major7apps.com"
-      },
-      "homepage": "https://github.com/wshobson/agents",
-      "license": "MIT",
-      "category": "marketing"
-    },
-    {
-      "name": "seo-analysis-monitoring",
-      "source": "./plugins/seo-analysis-monitoring",
-      "description": "Content freshness analysis, cannibalization detection, and authority building for SEO",
-      "version": "1.2.1",
-      "author": {
-        "name": "Seth Hobson",
-        "email": "seth@major7apps.com"
-      },
-      "homepage": "https://github.com/wshobson/agents",
-      "license": "MIT",
-      "category": "marketing"
     },
     {
       "name": "documentation-generation",
@@ -630,7 +564,7 @@
         "name": "Seth Hobson",
         "email": "seth@major7apps.com"
       },
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT",
       "category": "documentation"
     },
@@ -643,7 +577,7 @@
         "name": "Seth Hobson",
         "email": "seth@major7apps.com"
       },
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT",
       "category": "documentation"
     },
@@ -669,35 +603,9 @@
         "name": "Seth Hobson",
         "email": "seth@major7apps.com"
       },
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT",
       "category": "development"
-    },
-    {
-      "name": "business-analytics",
-      "source": "./plugins/business-analytics",
-      "description": "Business metrics analysis, KPI tracking, financial reporting, and data-driven decision making",
-      "version": "1.2.3",
-      "author": {
-        "name": "Seth Hobson",
-        "email": "seth@major7apps.com"
-      },
-      "homepage": "https://github.com/wshobson/agents",
-      "license": "MIT",
-      "category": "business"
-    },
-    {
-      "name": "startup-business-analyst",
-      "description": "Comprehensive startup business analysis with market sizing (TAM/SAM/SOM), financial modeling, team planning, and strategic research for early-stage companies",
-      "version": "1.0.6",
-      "author": {
-        "name": "Seth Hobson",
-        "email": "seth@major7apps.com"
-      },
-      "source": "./plugins/startup-business-analyst",
-      "category": "business",
-      "homepage": "https://github.com/wshobson/agents",
-      "license": "MIT"
     },
     {
       "name": "before-you-build",
@@ -721,7 +629,7 @@
         "name": "Seth Hobson",
         "email": "seth@major7apps.com"
       },
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT",
       "category": "business"
     },
@@ -734,27 +642,14 @@
         "name": "Seth Hobson",
         "email": "seth@major7apps.com"
       },
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT",
       "category": "business"
     },
     {
-      "name": "content-marketing",
-      "source": "./plugins/content-marketing",
-      "description": "Content marketing strategy, web research, and information synthesis for marketing operations",
-      "version": "1.2.1",
-      "author": {
-        "name": "Seth Hobson",
-        "email": "seth@major7apps.com"
-      },
-      "homepage": "https://github.com/wshobson/agents",
-      "license": "MIT",
-      "category": "marketing"
-    },
-    {
       "name": "social-publishing",
       "source": "./plugins/social-publishing",
-      "description": "Schedule and publish social media posts across 13 platforms (X, LinkedIn Profile + Page, Instagram Business + Standalone, Facebook Pages, TikTok, Discord, Telegram, YouTube, Reddit, WordPress, Pinterest) via SocialClaw \u2014 one workspace API key covers everything",
+      "description": "Schedule and publish social media posts across 13 platforms (X, LinkedIn Profile + Page, Instagram Business + Standalone, Facebook Pages, TikTok, Discord, Telegram, YouTube, Reddit, WordPress, Pinterest) via SocialClaw — one workspace API key covers everything",
       "version": "1.0.0",
       "author": {
         "name": "ndesv21",
@@ -778,19 +673,6 @@
       "category": "marketing"
     },
     {
-      "name": "blockchain-web3",
-      "source": "./plugins/blockchain-web3",
-      "description": "Smart contract development with Solidity, DeFi protocol implementation, NFT platforms, and Web3 application architecture",
-      "version": "1.2.3",
-      "author": {
-        "name": "Seth Hobson",
-        "email": "seth@major7apps.com"
-      },
-      "homepage": "https://github.com/wshobson/agents",
-      "license": "MIT",
-      "category": "blockchain"
-    },
-    {
       "name": "quantitative-trading",
       "source": "./plugins/quantitative-trading",
       "description": "Quantitative analysis, algorithmic trading strategies, financial modeling, portfolio risk management, and backtesting",
@@ -799,7 +681,7 @@
         "name": "Seth Hobson",
         "email": "seth@major7apps.com"
       },
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT",
       "category": "finance"
     },
@@ -812,22 +694,9 @@
         "name": "Seth Hobson",
         "email": "seth@major7apps.com"
       },
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT",
       "category": "payments"
-    },
-    {
-      "name": "game-development",
-      "source": "./plugins/game-development",
-      "description": "Unity game development with C# scripting, Minecraft server plugin development with Bukkit/Spigot APIs",
-      "version": "1.2.3",
-      "author": {
-        "name": "Seth Hobson",
-        "email": "seth@major7apps.com"
-      },
-      "homepage": "https://github.com/wshobson/agents",
-      "license": "MIT",
-      "category": "gaming"
     },
     {
       "name": "accessibility-compliance",
@@ -838,7 +707,7 @@
         "name": "Seth Hobson",
         "email": "seth@major7apps.com"
       },
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT",
       "category": "accessibility"
     },
@@ -851,7 +720,7 @@
         "name": "Seth Hobson",
         "email": "seth@major7apps.com"
       },
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT",
       "category": "languages"
     },
@@ -864,7 +733,7 @@
         "name": "Seth Hobson",
         "email": "seth@major7apps.com"
       },
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT",
       "category": "languages"
     },
@@ -877,7 +746,7 @@
         "name": "Seth Hobson",
         "email": "seth@major7apps.com"
       },
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT",
       "category": "languages"
     },
@@ -890,7 +759,7 @@
         "name": "Seth Hobson",
         "email": "seth@major7apps.com"
       },
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT",
       "category": "languages"
     },
@@ -903,7 +772,7 @@
         "name": "Seth Hobson",
         "email": "seth@major7apps.com"
       },
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT",
       "category": "languages"
     },
@@ -916,7 +785,7 @@
         "name": "Seth Hobson",
         "email": "seth@major7apps.com"
       },
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT",
       "category": "languages"
     },
@@ -929,7 +798,7 @@
         "name": "Community Contribution",
         "url": "https://github.com/exAClior"
       },
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT",
       "category": "languages"
     },
@@ -942,7 +811,7 @@
         "name": "Ryan Snodgrass",
         "url": "https://github.com/rsnodgrass"
       },
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT",
       "category": "languages"
     },
@@ -955,7 +824,7 @@
         "name": "Ryan Snodgrass",
         "url": "https://github.com/rsnodgrass"
       },
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT",
       "category": "languages"
     },
@@ -968,13 +837,13 @@
         "name": "Seth Hobson",
         "email": "seth@major7apps.com"
       },
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT",
       "category": "development"
     },
     {
       "name": "dgx-spark-ops",
-      "description": "NVIDIA DGX Spark (GB10) environment operations. Use when setting up, preflighting, or debugging ML workloads on DGX Spark or aarch64 Blackwell hardware \u2014 CUDA-13 wheel/ABI checks, unified-memory OOM ladders, thermal monitoring.",
+      "description": "NVIDIA DGX Spark (GB10) environment operations. Use when setting up, preflighting, or debugging ML workloads on DGX Spark or aarch64 Blackwell hardware — CUDA-13 wheel/ABI checks, unified-memory OOM ladders, thermal monitoring.",
       "version": "1.0.0",
       "author": {
         "name": "Seth Hobson",
@@ -982,7 +851,7 @@
       },
       "source": "./plugins/dgx-spark-ops",
       "category": "ai-ml",
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT"
     },
     {
@@ -991,16 +860,16 @@
       "description": "Binary reverse engineering, malware analysis, firmware security, and software protection research for authorized security research, CTF competitions, and defensive security",
       "version": "1.0.1",
       "author": {
-        "name": "D\u00e1vid Balatoni",
+        "name": "Dávid Balatoni",
         "url": "https://github.com/balcsida"
       },
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT",
       "category": "security"
     },
     {
       "name": "conductor",
-      "description": "Context-Driven Development plugin that transforms Claude Code into a project management tool with structured workflow: Context \u2192 Spec & Plan \u2192 Implement",
+      "description": "Context-Driven Development plugin that transforms Claude Code into a project management tool with structured workflow: Context → Spec & Plan → Implement",
       "version": "1.2.2",
       "author": {
         "name": "Seth Hobson",
@@ -1008,7 +877,7 @@
       },
       "source": "./plugins/conductor",
       "category": "workflows",
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "Apache-2.0"
     },
     {
@@ -1034,7 +903,7 @@
       },
       "source": "./plugins/ui-design",
       "category": "development",
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT"
     },
     {
@@ -1047,7 +916,7 @@
       },
       "source": "./plugins/agent-teams",
       "category": "workflows",
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT"
     },
     {
@@ -1059,7 +928,7 @@
         "name": "Seth Hobson",
         "email": "seth@major7apps.com"
       },
-      "homepage": "https://github.com/wshobson/agents",
+      "homepage": "https://github.com/liangquanli930/agents",
       "license": "MIT",
       "category": "languages"
     },
@@ -1158,7 +1027,7 @@
     {
       "name": "protect-mcp",
       "source": "./plugins/protect-mcp",
-      "description": "Cedar policy enforcement + Ed25519 signed receipts for every Claude Code tool call. First cryptographic governance plugin \u2014 decisions are policy-gated before they run and every decision produces a tamper-evident receipt verifiable offline.",
+      "description": "Cedar policy enforcement + Ed25519 signed receipts for every Claude Code tool call. First cryptographic governance plugin — decisions are policy-gated before they run and every decision produces a tamper-evident receipt verifiable offline.",
       "version": "0.1.2",
       "author": {
         "name": "Tom Farley",
@@ -1176,30 +1045,6 @@
         "governance",
         "audit",
         "compliance"
-      ]
-    },
-    {
-      "name": "signed-audit-trails",
-      "source": "./plugins/signed-audit-trails",
-      "description": "Teaching skill: cookbook-style walkthrough for signed audit trails on every Claude Code tool call. Cedar policy, Ed25519 receipts, offline verification, CI/CD integration, SLSA composition. Pairs with the protect-mcp runtime plugin.",
-      "version": "0.1.1",
-      "author": {
-        "name": "Tom Farley",
-        "email": "tommy@scopeblind.com",
-        "url": "https://github.com/tomjwxf"
-      },
-      "homepage": "https://veritasacta.com",
-      "license": "MIT",
-      "category": "governance",
-      "keywords": [
-        "tutorial",
-        "skill",
-        "recipe",
-        "audit",
-        "governance",
-        "cedar",
-        "receipts",
-        "ed25519"
       ]
     },
     {
@@ -1228,7 +1073,7 @@
     {
       "name": "ship-mate",
       "source": "./plugins/ship-mate",
-      "description": "Your AI development teammate. Turns a story file into a shipped, reviewed, and tested feature via orchestrator \u2192 architect \u2192 developer \u2192 PR reviewer \u2192 QA \u2192 Playwright.",
+      "description": "Your AI development teammate. Turns a story file into a shipped, reviewed, and tested feature via orchestrator → architect → developer → PR reviewer → QA → Playwright.",
       "version": "1.0.1",
       "author": {
         "name": "Pranay Yadav",
@@ -1251,7 +1096,7 @@
     {
       "name": "file-conversion",
       "source": "./plugins/file-conversion",
-      "description": "Convert files between 999 routes \u2014 PDF to Word, HEIC to JPG, MP4 to MP3, CSV to JSON, EPUB to MOBI \u2014 via the free ChangeThisFile API. MCP-aware with a zero-dependency script fallback; no API key required.",
+      "description": "Convert files between 999 routes — PDF to Word, HEIC to JPG, MP4 to MP3, CSV to JSON, EPUB to MOBI — via the free ChangeThisFile API. MCP-aware with a zero-dependency script fallback; no API key required.",
       "version": "1.0.0",
       "author": {
         "name": "Aadil Razvi",

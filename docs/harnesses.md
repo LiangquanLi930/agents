@@ -102,7 +102,7 @@ leave everything else under `.pi/` alone.
 
 ## Native install
 
-- **Codex** — `npx codex-marketplace add wshobson/agents` (or it's auto-discovered as a project
+- **Codex** — `npx codex-marketplace add liangquanli930/agents` (or it's auto-discovered as a project
   marketplace when the repo is the cwd), then install individual plugins. Codex reads `SKILL.md`
   straight from `plugins/<name>/skills/`; skills over the 8 KB cap are truncated by Codex at load.
   The gitignored `.codex/skills/` copies remain for the `~/.codex/skills` symlink recipe.
@@ -132,16 +132,16 @@ generate step. They carry skills only: no agents, commands, or hooks.
 
 ```bash
 # gh skill: lists as `[plugins] <plugin>/<skill>`, selects by bare skill name or exact path
-gh skill install wshobson/agents                                     # interactive browse
-gh skill install wshobson/agents python-testing-patterns
-gh skill install wshobson/agents plugins/python-development/skills/python-testing-patterns  # exact path skips the tree walk
-gh skill install wshobson/agents --all --agent claude-code --scope user
-gh skill install wshobson/agents python-testing-patterns --pin <sha>
+gh skill install liangquanli930/agents                                     # interactive browse
+gh skill install liangquanli930/agents python-testing-patterns
+gh skill install liangquanli930/agents plugins/python-development/skills/python-testing-patterns  # exact path skips the tree walk
+gh skill install liangquanli930/agents --all --agent claude-code --scope user
+gh skill install liangquanli930/agents python-testing-patterns --pin <sha>
 
 # npx skills: lists and selects by bare skill name
-npx skills add wshobson/agents --list
-npx skills add wshobson/agents --skill python-testing-patterns -a claude-code
-npx skills add wshobson/agents --all -g
+npx skills add liangquanli930/agents --list
+npx skills add liangquanli930/agents --skill python-testing-patterns -a claude-code
+npx skills add liangquanli930/agents --all -g
 ```
 
 Gotchas:
@@ -203,7 +203,7 @@ For generated harnesses, use Pensyve's upstream harness-native integration:
 ## External HOL Guard integration
 
 The Claude Code marketplace includes HOL Guard as an external `git-subdir` plugin from
-`https://github.com/hashgraph-online/hol-guard-plugin.git`, path `distributions/wshobson-agents`.
+`https://github.com/hashgraph-online/hol-guard-plugin.git`, path `distributions/liangquanli930-agents`.
 The reviewed payload exposes the portable `hol-guard` and `plugin-scanner` skills and
 keeps decisioning local by default. Guard Cloud is neither required nor promoted. This
 marketplace entry is a Claude Code discovery surface only; it does not add HOL Guard to the

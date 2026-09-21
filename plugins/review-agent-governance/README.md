@@ -59,7 +59,7 @@ general tool-call policy enforcement.
 ## Installation
 
 ```bash
-claude plugin install wshobson/agents/review-agent-governance
+claude plugin install liangquanli930/agents/review-agent-governance
 ```
 
 Copy the default policy into your project:

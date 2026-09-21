@@ -31,7 +31,7 @@ Available display modes:
 First, add the marketplace (if you haven't already):
 
 ```
-/plugin marketplace add wshobson/agents
+/plugin marketplace add liangquanli930/agents
 ```
 
 Then install the plugin:

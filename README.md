@@ -1,7 +1,7 @@
 # Agentic Plugin Marketplace
 
-> Production-ready agentic workflow building blocks: **94 plugins**, **202 agents**,
-> **183 skills**, **105 commands** — built for Claude Code and consumed natively by
+> Production-ready agentic workflow building blocks: **83 plugins**, **180 agents**,
+> **165 skills**, **100 commands** — built for Claude Code and consumed natively by
 > OpenAI Codex CLI, Cursor, OpenCode, the Antigravity CLI, GitHub Copilot, and Pi from a single Markdown source.
 
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-native-blueviolet)](#claude-code) [![Codex CLI](https://img.shields.io/badge/Codex%20CLI-supported-black)](docs/harnesses.md) [![Cursor](https://img.shields.io/badge/Cursor-supported-purple)](docs/harnesses.md) [![OpenCode](https://img.shields.io/badge/OpenCode-supported-green)](docs/harnesses.md) [![Antigravity CLI](https://img.shields.io/badge/Antigravity%20CLI-supported-blue)](docs/harnesses.md) [![Copilot](https://img.shields.io/badge/Copilot-supported-lightgrey)](docs/harnesses.md) [![Pi](https://img.shields.io/badge/Pi-supported-orange)](docs/harnesses.md)
@@ -18,8 +18,8 @@ Pick your harness:
 ### Claude Code
 
 ```bash
-/plugin marketplace add wshobson/agents
-/plugin install python-development          # or any of 94 plugins
+/plugin marketplace add liangquanli930/agents
+/plugin install python-development          # or any of 83 plugins
 ```
 
 [→ Full Claude Code setup, troubleshooting, and plugin catalog](docs/usage.md)
@@ -29,14 +29,14 @@ Pick your harness:
 Codex and Cursor install natively from the committed registries (which point at the source `plugins/`):
 
 ```bash
-npx codex-marketplace add wshobson/agents        # Codex; then install individual plugins
+npx codex-marketplace add liangquanli930/agents        # Codex; then install individual plugins
 # Cursor: add the marketplace, then `/plugin install <name>` (reads .cursor-plugin/ + source)
 ```
 
 Antigravity, OpenCode, and Pi install via clone + generate (the transformed trees are gitignored):
 
 ```bash
-gh repo clone wshobson/agents ~/agents && cd ~/agents
+gh repo clone liangquanli930/agents ~/agents && cd ~/agents
 make generate HARNESS=antigravity && make install-antigravity  # Antigravity (agy)
 make install-opencode                                          # OpenCode (runs generate + symlinks)
 make generate HARNESS=pi && make install-pi                    # Pi
@@ -47,9 +47,9 @@ make generate HARNESS=pi && make install-pi                    # Pi
 Both Agent Skills installers read `plugins/*/skills/` straight from GitHub, into whichever agent you use. No clone, no marketplace, no generate step. Skills only: no agents, commands, or hooks.
 
 ```bash
-gh skill install wshobson/agents                                 # browse, then pick a skill or --all
-gh skill install wshobson/agents python-testing-patterns --agent claude-code
-npx skills add wshobson/agents --skill python-testing-patterns   # add -a claude-code, -g for user scope
+gh skill install liangquanli930/agents                                 # browse, then pick a skill or --all
+gh skill install liangquanli930/agents python-testing-patterns --agent claude-code
+npx skills add liangquanli930/agents --skill python-testing-patterns   # add -a claude-code, -g for user scope
 ```
 
 Setup details and per-harness gotchas: [docs/harnesses.md](docs/harnesses.md).
@@ -58,10 +58,10 @@ Setup details and per-harness gotchas: [docs/harnesses.md](docs/harnesses.md).
 
 | | Count | What it is |
 |---|---:|---|
-| **Plugins** | 94 | Granular, single-purpose installable units (92 local + 2 external via git-subdir) |
-| **Agents** | 202 | Domain experts (architecture, languages, infra, security, data, ML, docs, business, SEO) |
-| **Skills** | 183 | Modular knowledge packages with progressive disclosure (load when activated) |
-| **Commands** | 105 | Slash commands: scaffolding, security scans, test gen, infrastructure setup |
+| **Plugins** | 83 | Granular, single-purpose installable units (81 local + 2 external via git-subdir) |
+| **Agents** | 180 | Domain experts (architecture, languages, infra, security, data, ML, docs) |
+| **Skills** | 165 | Modular knowledge packages with progressive disclosure (load when activated) |
+| **Commands** | 100 | Slash commands: scaffolding, security scans, test gen, infrastructure setup |
 | **Orchestrators** | 16 | Multi-agent coordination workflows (full-stack, security, ML, incident response) |
 
 Browse the catalog: [docs/plugins.md](docs/plugins.md) · [docs/agents.md](docs/agents.md) · [docs/agent-skills.md](docs/agent-skills.md)
@@ -113,7 +113,7 @@ make validate                            # structural checks
 make garden                              # drift / dead-link / cap detection
 ```
 
-Codex and Cursor install from source via committed registries; Antigravity, OpenCode, and Pi install via clone + `make`. Individual skills install into any agent with `gh skill install wshobson/agents` or `npx skills add wshobson/agents`, no clone needed.
+Codex and Cursor install from source via committed registries; Antigravity, OpenCode, and Pi install via clone + `make`. Individual skills install into any agent with `gh skill install liangquanli930/agents` or `npx skills add liangquanli930/agents`, no clone needed.
 
 [→ Full capability matrix and per-harness deep-dives](docs/harnesses.md)
 
@@ -137,9 +137,9 @@ uv run plugin-eval certify path/to/skill
 
 Detail lives in `docs/`. Read in this order:
 
-- **[docs/plugins.md](docs/plugins.md)** — full catalog of all 94 plugins
-- **[docs/agents.md](docs/agents.md)** — all 202 agents by category
-- **[docs/agent-skills.md](docs/agent-skills.md)** — 183 skills with progressive disclosure
+- **[docs/plugins.md](docs/plugins.md)** — full catalog of all 83 plugins
+- **[docs/agents.md](docs/agents.md)** — all 180 agents by category
+- **[docs/agent-skills.md](docs/agent-skills.md)** — 165 skills with progressive disclosure
 - **[docs/usage.md](docs/usage.md)** — commands, workflows, examples
 - **[docs/architecture.md](docs/architecture.md)** — design principles
 - **[docs/harnesses.md](docs/harnesses.md)** — cross-harness capability matrix
@@ -168,7 +168,7 @@ integrations for Codex CLI, Cursor, OpenCode, and Copilot (not yet the Antigravi
 ## External Security Integration
 
 [HOL Guard](https://hol.org/guard) is included as an external
-`git-subdir` entry for Claude Code from the reviewed `distributions/wshobson-agents`
+`git-subdir` entry for Claude Code from the reviewed `distributions/liangquanli930-agents`
 payload in [hashgraph-online/hol-guard-plugin](https://github.com/hashgraph-online/hol-guard-plugin).
 The payload exposes local `hol-guard` and `plugin-scanner` skills. Guard Cloud is neither
 required nor promoted on the default path. This marketplace entry is a Claude Code
@@ -188,4 +188,4 @@ MIT — see [LICENSE](LICENSE).
 
 ## Star history
 
-[![Star History Chart](https://star-history.dera.page/svg?repos=wshobson/agents&type=date&legend=top-left)](https://star-history.dera.page/#wshobson/agents&type=date&legend=top-left)
+[![Star History Chart](https://star-history.dera.page/svg?repos=liangquanli930/agents&type=date&legend=top-left)](https://star-history.dera.page/#liangquanli930/agents&type=date&legend=top-left)
