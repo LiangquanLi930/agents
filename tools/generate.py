@@ -2,7 +2,7 @@
 """Unified CLI for emitting per-harness artifacts from claude-agents plugin sources.
 
 Usage:
-    python tools/generate.py --harness <codex|copilot|cursor|opencode|antigravity|pi> [--plugin <name>] [--all] [--clean] [--prune] [--strict]
+    python tools/generate.py --harness <codex|copilot|opencode|antigravity|pi> [--plugin <name>] [--all] [--clean] [--prune] [--strict]
 """
 
 from __future__ import annotations
@@ -31,7 +31,6 @@ from tools.adapters.capabilities import supported_harnesses
 _HARNESS_TARGETS = {
     # AGENTS.md is the committed canonical context file — never delete it from clean.
     "codex": [".codex", ".agents/plugins"],
-    "cursor": [".cursor", ".cursor-plugin"],
     "opencode": [".opencode", "opencode.json"],
     "copilot": [".copilot/agents", ".copilot/skills", ".copilot/commands"],
     "antigravity": [".antigravity"],
@@ -47,10 +46,6 @@ def get_adapter(harness_id: str, output_root: Path) -> HarnessAdapter:
         from tools.adapters.codex import CodexAdapter
 
         return CodexAdapter(output_root=output_root)
-    if harness_id == "cursor":
-        from tools.adapters.cursor import CursorAdapter
-
-        return CursorAdapter(output_root=output_root)
     if harness_id == "opencode":
         from tools.adapters.opencode import OpenCodeAdapter
 
@@ -181,14 +176,6 @@ def prune_orphans(harness_id: str, output_root: Path, written: set[Path]) -> lis
             d = output_root / ".pi" / sub
             if d.is_dir():
                 candidates.extend(p for p in d.rglob("*") if p.is_file())
-    elif harness_id == "cursor":
-        # Both .cursor-plugin/plugins/*.json and .cursor/rules/*.mdc are adapter outputs.
-        for sub_path in (
-            output_root / ".cursor-plugin" / "plugins",
-            output_root / ".cursor" / "rules",
-        ):
-            if sub_path.is_dir():
-                candidates.extend(p for p in sub_path.rglob("*") if p.is_file())
 
     for f in candidates:
         if f.resolve() not in written_resolved:
@@ -213,7 +200,7 @@ def main() -> int:
         "--harness",
         required=True,
         choices=supported_harnesses(),
-        help="Target harness (codex, copilot, cursor, opencode, antigravity, or pi).",
+        help="Target harness (codex, copilot, opencode, antigravity, or pi).",
     )
     group = parser.add_mutually_exclusive_group()
     group.add_argument("--plugin", help="Generate only for the named plugin.")

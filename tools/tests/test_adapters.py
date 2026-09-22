@@ -18,7 +18,6 @@ from tools.adapters.antigravity import AntigravityAdapter
 from tools.adapters.base import PluginSource, parse_frontmatter, yaml_scalar
 from tools.adapters.codex import CodexAdapter, _split_body_if_oversized
 from tools.adapters.copilot import CopilotAdapter, _build_tools_list
-from tools.adapters.cursor import CursorAdapter
 from tools.adapters.opencode import OpenCodeAdapter, _opencode_skill_id
 
 # ── Codex ────────────────────────────────────────────────────────────────────
@@ -516,108 +515,6 @@ class TestCodexAdapter:
         # 'the bash tool' (lowercase) → left alone (refers to shell, not Claude's Bash).
         out2 = _rewrite_body_for_codex("Configure the bash tool in your Makefile.")
         assert "the bash tool" in out2
-
-
-# ── Cursor ───────────────────────────────────────────────────────────────────
-
-
-class TestCursorAdapter:
-    def test_emits_plugin_manifest(self, synthetic_plugin: PluginSource, output_root: Path):
-        adapter = CursorAdapter(output_root=output_root)
-        result = adapter.emit_plugin(synthetic_plugin)
-        manifest_path = output_root / ".cursor-plugin" / "plugins" / "demo.json"
-        assert manifest_path in result.written
-
-        manifest = json.loads(manifest_path.read_text())
-        assert manifest["name"] == "demo"
-        assert manifest["version"] == "1.0.0"
-        assert manifest["author"]["name"] == "Tester"
-        # No component arrays — Cursor auto-discovers
-        assert "skills" not in manifest
-        assert "agents" not in manifest
-
-    def test_emits_marketplace_with_owner_and_source(
-        self, synthetic_plugin: PluginSource, output_root: Path
-    ):
-        adapter = CursorAdapter(output_root=output_root)
-        adapter.emit_plugin(synthetic_plugin)
-        result = adapter.emit_global([synthetic_plugin])
-
-        marketplace = output_root / ".cursor-plugin" / "marketplace.json"
-        assert marketplace in result.written
-        data = json.loads(marketplace.read_text())
-        assert "owner" in data
-        assert data["owner"].get("name")
-        # First plugin entry uses `source`, not `path` or `url`
-        assert data["plugins"][0]["source"] == "./plugins/demo"
-
-    def test_emits_curated_rules_present(self, synthetic_plugin: PluginSource, output_root: Path):
-        adapter = CursorAdapter(output_root=output_root)
-        result = adapter.emit_global([synthetic_plugin])
-        rule_files = [p for p in result.written if p.suffix == ".mdc"]
-        assert rule_files  # the three curated rules ship with the repo
-
-    def test_string_author_normalized_to_dict(self, tmp_path: Path, output_root: Path):
-        """A plugin.json with npm-style `\"author\": \"Name <email>\"` must not crash the adapter."""
-        from tools.adapters.cursor import CursorAdapter
-
-        plugin_dir = tmp_path / "demo"
-        plugin_dir.mkdir()
-        (plugin_dir / ".claude-plugin").mkdir()
-        (plugin_dir / ".claude-plugin" / "plugin.json").write_text(
-            '{"name": "demo", "version": "1.0.0", "author": "Jane Doe <jane@example.com>"}'
-        )
-        plugin = PluginSource(
-            name="demo",
-            dir=plugin_dir,
-            plugin_json={
-                "name": "demo",
-                "version": "1.0.0",
-                "author": "Jane Doe <jane@example.com>",
-            },
-        )
-        CursorAdapter(output_root=output_root).emit_plugin(plugin)
-        manifest = json.loads(
-            (output_root / ".cursor-plugin" / "plugins" / "demo.json").read_text()
-        )
-        assert manifest["author"] == {"name": "Jane Doe", "email": "jane@example.com"}
-
-    def test_curated_rules_validate(self, synthetic_plugin: PluginSource, output_root: Path):
-        """Each emitted .mdc has only the three allowed frontmatter keys."""
-        adapter = CursorAdapter(output_root=output_root)
-        adapter.emit_global([synthetic_plugin])
-        rules_dir = output_root / ".cursor" / "rules"
-        assert rules_dir.is_dir()
-        for mdc in rules_dir.glob("*.mdc"):
-            content = mdc.read_text()
-            fm, _ = parse_frontmatter(content)
-            invalid = set(fm.keys()) - {"description", "globs", "alwaysApply"}
-            assert not invalid, f"{mdc}: unexpected keys {invalid}"
-
-    def test_mdc_validator_handles_block_scalar(self, tmp_path: Path):
-        """A description: > block scalar with colons in body must NOT yield phantom keys."""
-        from tools.adapters.cursor import _validate_mdc_frontmatter
-
-        content = (
-            "---\n"
-            "description: >\n"
-            "  Use: this rule when authoring source plugins.\n"
-            "  Apply: only to plugins/ markdown.\n"
-            "alwaysApply: true\n"
-            "---\n\n"
-            "Body.\n"
-        )
-        errors = _validate_mdc_frontmatter(content, tmp_path / "test.mdc")
-        # 'Use' and 'Apply' must NOT appear as invalid keys
-        assert errors == [], f"unexpected errors: {errors}"
-
-    def test_mdc_validator_rejects_real_invalid_key(self, tmp_path: Path):
-        """A genuine invalid frontmatter key (e.g. `agentRequested:`) is still rejected."""
-        from tools.adapters.cursor import _validate_mdc_frontmatter
-
-        content = "---\ndescription: x\nagentRequested: true\n---\n\nBody.\n"
-        errors = _validate_mdc_frontmatter(content, tmp_path / "test.mdc")
-        assert any("agentRequested" in e for e in errors)
 
 
 # ── OpenCode ─────────────────────────────────────────────────────────────────
@@ -1747,7 +1644,6 @@ class TestCapabilities:
             AntigravityAdapter,
             CodexAdapter,
             CopilotAdapter,
-            CursorAdapter,
             OpenCodeAdapter,
         ):
             assert adapter_cls.harness_id in CAPABILITIES

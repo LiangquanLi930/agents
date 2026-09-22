@@ -10,12 +10,12 @@ contact_links:
     url: https://github.com/liangquanli930/agents/blob/main/AGENTS.md
     about: >-
       Start here — table of contents for the whole repo, read natively by
-      Codex / Cursor / OpenCode / Antigravity CLI / Pi and imported by Claude Code.
+      Codex / OpenCode / Antigravity CLI / Pi and imported by Claude Code.
   - name: Authoring guide (cross-harness style guide)
     url: https://github.com/liangquanli930/agents/blob/main/docs/authoring.md
     about: >-
       Read before adding new plugins or components — covers portability
-      across Claude Code, Codex CLI, Cursor, OpenCode, the Antigravity CLI, and Pi.
+      across Claude Code, Codex CLI, OpenCode, the Antigravity CLI, and Pi.
   - name: Per-harness setup
     url: https://github.com/liangquanli930/agents/blob/main/docs/harnesses.md
     about: >-
